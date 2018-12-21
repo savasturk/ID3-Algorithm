@@ -23,9 +23,9 @@ class Dtree(object):
 def entropy(data,self,wd):
     ones = 0
     zeros = 0
-    count = 0
+    counter = 0
     for i in range(1,len(data)):
-        count = count +1
+        counter = counter +1
         dt = int(data[i][wd])
         if dt == 0:
             zeros = zeros + 1
@@ -34,11 +34,11 @@ def entropy(data,self,wd):
     self.ones = ones
     self.zeros = zeros
     if ones != 0:
-        pos = -(float(ones/count)*math.log(float(ones/count),2))
+        pos = -(float(ones/counter)*math.log(float(ones/counter),2))
     else:
         pos = 0
     if zeros != 0:
-        neg = -(float(zeros/count)*math.log(float(zeros/count),2))
+        neg = -(float(zeros/counter)*math.log(float(zeros/counter),2))
     else:
         neg = 0
     self.entropy = pos + neg
